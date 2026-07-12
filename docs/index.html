@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08111f">
+  <meta name="description" content="Delegate Codex CLI: delega metas a agentes efímeros con roles PM, Dev, QA y contexto KDD.">
+  <title>Delegate Codex CLI</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Delegate Codex CLI home">
+      <span class="brand-mark"><span></span><span></span><span></span></span>
+      <span>delegate<span class="brand-accent">/codex</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#roles" data-i18n="navRoles">Roles</a>
+      <a href="#kdd" data-i18n="navKdd">KDD</a>
+      <a href="#start" data-i18n="navStart">Start</a>
+      <a class="github-link" href="https://github.com/MauricioPerera/delegate-codex-cli" target="_blank" rel="noreferrer">GitHub <span>↗</span></a>
+    </nav>
+    <div class="language-switcher" role="group" aria-label="Language">
+      <button class="lang active" data-lang="es" aria-pressed="true">ES</button>
+      <button class="lang" data-lang="en" aria-pressed="false">EN</button>
+      <button class="lang" data-lang="pt" aria-pressed="false">PT</button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero section-shell">
+      <div class="hero-copy reveal">
+        <div class="eyebrow"><span class="pulse-dot"></span><span data-i18n="eyebrow">OPEN SOURCE · EPHEMERAL AGENTS</span></div>
+        <h1 data-i18n="heroTitle">Dale una meta.<br><em>Elige quién</em> la ejecuta.</h1>
+        <p class="hero-lede" data-i18n="heroLede">Una skill para delegar trabajo a instancias aisladas de Codex CLI. PM, Dev y QA trabajan con el modelo adecuado, el contexto correcto y una salida verificable.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#start" data-i18n="tryIt">Probar ahora <span>↓</span></a>
+          <a class="button quiet" href="https://github.com/MauricioPerera/delegate-codex-cli" target="_blank" rel="noreferrer"><span class="github-icon">●</span><span data-i18n="viewGithub">Ver en GitHub</span></a>
+        </div>
+        <div class="trust-line"><span>⌁</span><span data-i18n="trustLine">Portable · Python estándar · Sin dependencias externas</span></div>
+      </div>
+      <div class="hero-visual reveal delay-1" aria-label="Animated delegation flow illustration" role="img">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="hero-core"><span class="core-bracket">{</span><span class="core-star">✦</span><span class="core-bracket">}</span></div>
+        <div class="floating-card card-pm"><span class="mini-icon pm">P</span><span>PM</span><small>Terra</small></div>
+        <div class="floating-card card-dev"><span class="mini-icon dev">D</span><span>Dev</span><small>Sol</small></div>
+        <div class="floating-card card-qa"><span class="mini-icon qa">Q</span><span>QA</span><small>Luna</small></div>
+        <div class="signal signal-a"></div><div class="signal signal-b"></div><div class="signal signal-c"></div>
+      </div>
+    </section>
+
+    <section class="ticker" aria-label="Key features">
+      <div class="ticker-track"><span data-i18n="tickerOne">META EXPLÍCITA</span><b>✦</b><span data-i18n="tickerTwo">MODELO CONCRETO</span><b>✦</b><span data-i18n="tickerThree">SANDBOX SEGURO</span><b>✦</b><span data-i18n="tickerFour">RESULTADO VERIFICABLE</span><b>✦</b><span data-i18n="tickerOne">META EXPLÍCITA</span><b>✦</b><span data-i18n="tickerTwo">MODELO CONCRETO</span></div>
+    </section>
+
+    <section id="roles" class="roles-section section-shell section-space">
+      <div class="section-intro reveal"><div class="section-number">01 / 03</div><h2 data-i18n="rolesTitle">Cada meta tiene<br><em>su mejor agente.</em></h2><p data-i18n="rolesLede">No uses el modelo más caro para todo. Divide el flujo por intención y deja que cada perfil haga lo que mejor sabe hacer.</p></div>
+      <div class="role-layout reveal delay-1">
+        <div class="role-tabs" role="tablist" aria-label="Agent roles">
+          <button class="role-tab selected" data-role="pm" role="tab" aria-selected="true"><span class="role-index">01</span><span><strong data-i18n="pmName">Project Manager</strong><small data-i18n="pmShort">Ordena la idea</small></span><span class="role-model">Terra</span></button>
+          <button class="role-tab" data-role="dev" role="tab" aria-selected="false"><span class="role-index">02</span><span><strong data-i18n="devName">Developer</strong><small data-i18n="devShort">Construye la solución</small></span><span class="role-model">Sol</span></button>
+          <button class="role-tab" data-role="qa" role="tab" aria-selected="false"><span class="role-index">03</span><span><strong data-i18n="qaName">Quality Assurance</strong><small data-i18n="qaShort">Busca lo que falta</small></span><span class="role-model">Luna + Terra</span></button>
+        </div>
+        <div class="role-detail" aria-live="polite">
+          <div class="detail-top"><span class="detail-kicker" id="detailKicker">PM / DISCOVERY</span><span class="detail-model" id="detailModel">gpt-5.6-terra</span></div>
+          <h3 id="detailTitle">Convierte una conversación en un plan.</h3>
+          <p id="detailBody">Recibe requisitos, los ordena y los convierte en objetivos verificables para el siguiente agente.</p>
+          <div class="command-box"><div class="command-head"><span><i></i><i></i><i></i></span><small>delegate_codex.py</small><button id="copyCommand" aria-label="Copy command">⧉</button></div><code id="detailCommand">python delegate_codex.py --role pm --goal "Define objectives..."</code></div>
+          <div class="detail-foot"><span class="tiny-check">✓</span><span id="detailFoot">Ideal para lenguaje natural, prioridades y criterios de aceptación.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="kdd" class="kdd-section section-shell section-space">
+      <div class="kdd-panel reveal">
+        <div class="kdd-copy"><div class="section-number">02 / 03</div><div class="kdd-label"><span>KNOWLEDGE-DRIVEN DEVELOPMENT</span><span class="kdd-dot"></span></div><h2 data-i18n="kddTitle">El contexto correcto,<br><em>en el momento correcto.</em></h2><p data-i18n="kddLede">KDD convierte contratos y conocimiento en un prefijo estable. El agente no empieza de cero: recibe las reglas que importan antes de recibir la tarea variable.</p><a class="text-link" href="https://github.com/MauricioPerera/KDD" target="_blank" rel="noreferrer"><span data-i18n="exploreKdd">Explorar KDD</span> <b>↗</b></a></div>
+        <div class="kdd-diagram" role="img" aria-label="KDD static context flows into a dynamic goal">
+          <div class="diagram-label label-static">STATIC PREFIX</div><div class="diagram-label label-dynamic">DYNAMIC GOAL</div>
+          <div class="context-stack"><div class="context-file file-one"><span>◫</span> AGENTS.md</div><div class="context-file file-two"><span>◫</span> contract.md</div><div class="context-file file-three"><span>◫</span> knowledge/</div></div>
+          <div class="context-pipe"><span class="pipe-line"></span><span class="pipe-particle p1"></span><span class="pipe-particle p2"></span><span class="pipe-particle p3"></span></div>
+          <div class="context-result"><div class="result-ring">✦</div><strong>Codex</strong><small>shared context</small></div>
+          <div class="goal-chip"><span>→</span><span data-i18n="goalChip">Implementa la meta</span></div>
+        </div>
+      </div>
+      <div class="cache-note reveal"><span class="cache-icon">◌</span><div><strong data-i18n="cacheTitle">Prefijo estable, caché aprovechable.</strong><p data-i18n="cacheBody">Mantén los archivos estáticos al principio y la tarea al final. La caché se mide: no se asume.</p></div><span class="cache-arrow">→</span></div>
+    </section>
+
+    <section class="how-section section-shell section-space">
+      <div class="section-intro reveal"><div class="section-number">03 / 03</div><h2 data-i18n="howTitle">De la idea al<br><em>resultado verificado.</em></h2></div>
+      <div class="steps reveal delay-1">
+        <article class="step"><span class="step-number">01</span><div class="step-line"></div><h3 data-i18n="stepOneTitle">Define el goal</h3><p data-i18n="stepOneBody">Escribe qué debe ocurrir y cómo sabremos que terminó.</p></article>
+        <article class="step"><span class="step-number">02</span><div class="step-line"></div><h3 data-i18n="stepTwoTitle">Elige el perfil</h3><p data-i18n="stepTwoBody">PM, Dev o QA. El modelo se asigna automáticamente.</p></article>
+        <article class="step"><span class="step-number">03</span><div class="step-line"></div><h3 data-i18n="stepThreeTitle">Verifica la salida</h3><p data-i18n="stepThreeBody">Lee el JSONL, revisa artefactos y confía en la evidencia.</p></article>
+      </div>
+    </section>
+
+    <section id="start" class="start-section section-shell">
+      <div class="start-card reveal"><div class="start-glow"></div><div class="start-content"><div class="eyebrow"><span class="pulse-dot"></span><span data-i18n="startEyebrow">READY WHEN YOU ARE</span></div><h2 data-i18n="startTitle">Tu próximo agente<br>empieza con una línea.</h2><p data-i18n="startBody">Clona el repositorio, instala la skill y delega tu primera meta.</p><div class="install-box"><span class="install-prompt">$</span><code>git clone github.com/MauricioPerera/delegate-codex-cli</code><button id="copyInstall" aria-label="Copy install command">⧉</button></div><div class="start-links"><a class="button primary" href="https://github.com/MauricioPerera/delegate-codex-cli" target="_blank" rel="noreferrer" data-i18n="openRepo">Abrir repositorio ↗</a><a class="button quiet" href="#top" data-i18n="backTop">Volver arriba ↑</a></div></div></div>
+    </section>
+  </main>
+
+  <footer class="site-footer section-shell"><span>delegate<span class="brand-accent">/codex</span></span><span data-i18n="footerText">Built for clear goals and calmer builds.</span><a href="https://github.com/MauricioPerera/delegate-codex-cli" target="_blank" rel="noreferrer">MIT · GitHub ↗</a></footer>
+  <script src="app.js"></script>
+</body>
+</html>
