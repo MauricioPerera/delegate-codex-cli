@@ -1,0 +1,4 @@
+interface:
+  display_name: "Delegate Codex CLI"
+  short_description: "Delegate isolated goals to ephemeral Codex CLI agents"
+  default_prompt: "Use $delegate-codex-cli to route this goal through the PM, Dev, or QA profile with an explicit model and safe execution parameters."
