@@ -115,7 +115,7 @@ def build_prompt(args: argparse.Namespace, cwd: Path) -> str:
     root = Path(args.kdd_root).expanduser().resolve() if args.kdd_root else cwd
     sections = []
 
-    for relative in reversed(args.kdd_prefix):
+    for relative in args.kdd_prefix:
         path = (root / relative).resolve()
         if not path.is_file():
             raise SystemExit(f"KDD prefix file does not exist: {path}")
